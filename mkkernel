@@ -1,1 +1,15 @@
-./mkbootimg.py --kernel $1 --ramdisk /dev/null --os_version 8.0.0 --os_patch_level 2020-08 --pagesize 0x00000800 --base 0x00000000 --kernel_offset 0x00480000 --ramdisk_offset 0x08000000 --second_offset 0x01300000 --tags_offset 0x07e00000 --board '' --cmdline 'loglevel=4 coherent_pool=512K page_tracker=on slub_min_objects=12 unmovable_isolate1=2:192M,3:224M,4:256M printktimer=0xfff0a000,0x534,0x538 androidboot.selinux=enforcing buildvariant=user' -o $2
+. ./device
+
+./mkbootimg.py \
+--kernel $1 --ramdisk /dev/null \
+--os_version "$kernel_os_version" \
+--os_patch_level "$kernel_os_patch_level" \
+--pagesize "$kernel_pagesize" \
+--base "$kernel_base" \
+--kernel_offset "$kernel_kernel_offset" \
+--ramdisk_offset "$kernel_ramdisk_offset" \
+--second_offset "$kernel_second_offset" \
+--tags_offset "$kernel_tags_offset" \
+--board "$kernel_board" \
+--cmdline "$kernel_cmdline" \
+-o $2

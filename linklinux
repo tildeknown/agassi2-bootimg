@@ -1,2 +1,2 @@
-rm linux
+rm -f linux
 ln -s $1 linux

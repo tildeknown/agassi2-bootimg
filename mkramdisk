@@ -1,1 +1,15 @@
-./mkbootimg.py --kernel /dev/null --ramdisk $1 --os_version 8.0.0 --os_patch_level 2020-10 --pagesize 0x00000800 --base 0x00000000 --kernel_offset 0x10008000 --ramdisk_offset 0x11000000 --second_offset 0x10f00000 --tags_offset 0x10000100 --board '' --cmdline buildvariant=user -o $2
+. ./device
+
+./mkbootimg.py \
+--kernel /dev/null --ramdisk $1 \
+--os_version "$ramdisk_os_version" \
+--os_patch_level "$ramdisk_os_patch_level" \
+--pagesize "$ramdisk_pagesize" \
+--base "$ramdisk_base" \
+--kernel_offset "$ramdisk_kernel_offset" \
+--ramdisk_offset "$ramdisk_ramdisk_offset" \
+--second_offset "$ramdisk_second_offset" \
+--tags_offset "$ramdisk_tags_offset" \
+--board "$ramdisk_board" \
+--cmdline "$ramdisk_cmdline" \
+-o $2

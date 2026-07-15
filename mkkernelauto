@@ -1,1 +1,3 @@
-./mkkerneldtb linux/arch/arm64/boot/Image.gz linux/arch/arm64/boot/dts/hisilicon/hi6250-huawei-agassi2.dtb $1
+. ./device
+
+./mkkerneldtb $linux/$image $linux/$dtb $1
