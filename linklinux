@@ -1,0 +1,2 @@
+rm linux
+ln -s $1 linux

@@ -1,0 +1,4 @@
+cat $1 $2 > Image
+gzip Image
+./mkkernel Image.gz $3
+rm Image.gz
